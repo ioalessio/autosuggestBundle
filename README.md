@@ -6,7 +6,7 @@ Add IoAutosuggestBundle in your composer.json:
 ```js
 {
     "require": {
-        "ioalessio/autosuggest": "dev-master"
+        "ioalessio/autosuggestbundle": "dev-master"
     }
 }
 ```
