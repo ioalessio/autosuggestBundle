@@ -37,13 +37,14 @@ Enable the bundle in the kernel:
 ```
 
 ### Step 3: Configure the bundle
-
 Add javascript files in your page (you can also put at the end of page) 
 
-- bundles/ioautosuggest/twitter-bootstrap-typeahead.js
-- bundles/ioautosuggest/autosuggest.js
+    - libs/boostrap/bootstrap-typehead.js
+    - bundles/ioautosuggest/twitter-bootstrap-typeahead.js #this file extends original twitter bootstrap typehead file
+    - bundles/ioautosuggest/autosuggest.js
 
-IMPORTANT: it depends form bootstrap-typehead script
+IMPORTANT: bootstrap-typehead.js can be downloaded here: http://twitter.github.com/bootstrap/javascript.html#typeahead 
+
 
 Add widget code in your form template file 
 
