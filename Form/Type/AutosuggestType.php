@@ -37,7 +37,7 @@ class AutosuggestType extends AbstractType
 
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $url = $this->router->generate($options['route'], $option['route_parameters']);                        
+        $url = $this->router->generate($options['route'], $options['route_parameters']);                        
         $view->setAttribute('url', $url);
      
     }
@@ -47,17 +47,23 @@ class AutosuggestType extends AbstractType
         //devo prendere l'input text 
         $transformer = new AutosuggestTransformer($this->om, $options['entityName'], $options['autosuggestMethod'], $options['valueMethod']);
         $builder->addModelTransformer($transformer)
-                ->add('value', 'hidden')
+                ->add('value', 'text')
                 ->add('autosuggest', 'text') 
                  ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
+        $resolver->setRequired(array('entityName'));
+        $resolver->setRequired(array('route'));
+        
+        $resolver->setOptional(array('autocompleteMethod', 'valueMethod', 'route_parameters'));
+        
         $resolver->setDefaults(array(
             'invalid_message' => 'Entity does not exists',
             'autosuggestMethod' => 'autocomplete',
             'valueMethod' => 'id',
+            'route_parameters' => array()
             
         ));
     }

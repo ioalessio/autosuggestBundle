@@ -62,7 +62,7 @@ class AutosuggestTransformer implements DataTransformerInterface
      *
      * @param  string $number
      * @return Cliente|null
-     * @throws TransformationFailedException if object (Cliente) is not found.
+     * @throws TransformationFailedException if object ($entity) is not found.
      */
     public function reverseTransform($string)
     {
@@ -71,6 +71,9 @@ class AutosuggestTransformer implements DataTransformerInterface
             return null;
         }
 
+        //i should manage this call by a parameter
+        // example:
+        // $this->getEm()->getRepository($entityName)->$method($value);        
         $entity = $this->getOm()->createQuery("SELECT e FROM ".$this->getEntityName()." e WHERE e.id = :id")
                 ->setParameter('id', $value)
                 ->getSingleResult();
