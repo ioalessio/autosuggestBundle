@@ -6,7 +6,7 @@ Add IoAutosuggestBundle in your composer.json:
 ```js
 {
     "require": {
-        "gayalab/autosuggest": "dev-master"
+        "ioalessio/autosuggest": "dev-master"
     }
 }
 ```
