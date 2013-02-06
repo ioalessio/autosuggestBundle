@@ -67,7 +67,7 @@ class AutosuggestTransformer implements DataTransformerInterface
     public function reverseTransform($string)
     {
         $value = $string['value'];
-        if (!$string) {
+        if (!$value) {
             return null;
         }
 
