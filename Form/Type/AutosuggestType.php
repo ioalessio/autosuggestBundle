@@ -46,6 +46,7 @@ class AutosuggestType extends AbstractType
     {
         //devo prendere l'input text 
         $transformer = new AutosuggestTransformer($this->om, $options['entityName'], $options['valueMethod'], $options['autosuggestMethod']);
+        
         $builder->addModelTransformer($transformer)
                 ->add('value', 'hidden')
                 ->add('autosuggest', 'text') 
@@ -57,7 +58,7 @@ class AutosuggestType extends AbstractType
         $resolver->setRequired(array('entityName'));
         $resolver->setRequired(array('route'));
         
-        $resolver->setOptional(array('autocompleteMethod', 'valueMethod', 'route_parameters'));
+        $resolver->setOptional(array('autosuggestMethod', 'valueMethod', 'route_parameters'));
         
         $resolver->setDefaults(array(
             'invalid_message' => 'Entity does not exists',
