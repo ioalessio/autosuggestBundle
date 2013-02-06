@@ -84,7 +84,7 @@ Add widget code in your form template file
     {
         $query = $this->getRequest()->get('query');
         
-        $data = $this->getDoctrine()->getEntityManager()->createQuery("SELECT e.id, e.name AS name FROM AcmeDemoBundle:MyEntity e WHERE e.name LIKE :query)
+        $data = $this->getDoctrine()->getEntityManager()->createQuery("SELECT e.id, e.name AS name FROM AcmeDemoBundle:MyEntity e WHERE e.name LIKE :query")
                 ->setParameter('query',  "%".$query."%")
                 ->getArrayResult();                
         // array must countain 'id' and 'name' 
