@@ -1,4 +1,4 @@
-{% block autosuggest_widget %}
+{% block autosuggest_selector_widget %}
 {% spaceless %}
     {{ form_widget(form.autosuggest, { 'attr' : { 'class': 'ajax-typeahead ', 'data-value': form.value.vars['id'], 'data-link' : form.vars['attr']['url'] } } ) }}
     {{ form_widget(form.value) }}
