@@ -1,0 +1,6 @@
+services:
+    io_autosuggest.type.entity_selector:
+        class: Io\AutosuggestBundle\Form\Type\AutosuggestType
+        arguments: ["@doctrine.orm.entity_manager", "@router"]
+        tags:
+            - { name: form.type, alias: autosuggest_selector }
