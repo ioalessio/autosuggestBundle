@@ -38,7 +38,7 @@ class AutosuggestType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $url = $this->router->generate($options['route'], $options['route_parameters']);                        
-        $view->setAttribute('url', $url);
+        $view->vars['attr']['url'] = $url;
      
     }
     
