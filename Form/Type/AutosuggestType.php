@@ -46,7 +46,7 @@ class AutosuggestType extends AbstractType
     {
         //devo prendere l'input text 
         $transformer = new AutosuggestTransformer($this->om, $options['entityName'], $options['valueMethod'], $options['autosuggestMethod']);
-        
+
         $builder->addModelTransformer($transformer)
                 ->add('value', 'hidden')
                 ->add('autosuggest', 'text') 

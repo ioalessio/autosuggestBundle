@@ -28,7 +28,6 @@ class AutosuggestTransformer implements DataTransformerInterface
     public function __construct(ObjectManager $om, $entityName, $value = "id", $autosuggest = "autocomplete")
     {
         $this->om = $om;
-
         $this->entityName = $entityName;
         $this->valueMethod = $value;
         $this->autosuggestMethod = $autosuggest;
@@ -84,7 +83,7 @@ class AutosuggestTransformer implements DataTransformerInterface
                 $string
             ));
         }
-
+       
         return $entity;
     }
     
